@@ -11,10 +11,11 @@ class Quotes:
         return self.quotes_list
 
     def get_quote(self, quote_number: int) -> dict:
-        if quote_number>=len(self.quotes_list["quotes"]):
+        if quote_number>len(self.quotes_list["quotes"]) or \
+            quote_number==0:
             raise IndexError()
         return {
-            "quote": self.quotes_list["quotes"][quote_number]
+            "quote": self.quotes_list["quotes"][quote_number+1]
         }
 
     def get_random_quote(self) -> dict:

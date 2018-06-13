@@ -1,14 +1,10 @@
 from pyramid.response import Response
 from pyramid.request import Request
-from pyramid.view import view_config
-
 from quotes.classes import Quotes
 
-@view_config(renderer='json')
 def get_quotes_view(request):
     define_session(request)
-    return Response(json=request.session['quote_result'].get_quotes(), \
-                    content_type="application/json")
+    return Response(json=request.session['quote_result'].get_quotes())
 
 def get_quote_view(request):
     try:
@@ -23,7 +19,6 @@ def get_quote_view(request):
 
 def get_random_quote_view(request):
     try:
-        print("RANDOM")
         define_session(request)
         return Response(json=request.session['quote_result'].get_random_quote())
     except Exception as e:
@@ -35,6 +30,6 @@ def home_view(request):
     return Response("Web Challenge 1.0")
 
 def define_session(request):
-    if "quote_result" not in request.session:
+    if request.session.new:
         session = request.session
         session['quote_result'] = Quotes()

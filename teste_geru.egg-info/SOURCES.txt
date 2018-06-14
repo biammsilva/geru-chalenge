@@ -1,0 +1,8 @@
+README.md
+setup.py
+teste_geru.egg-info/PKG-INFO
+teste_geru.egg-info/SOURCES.txt
+teste_geru.egg-info/dependency_links.txt
+teste_geru.egg-info/entry_points.txt
+teste_geru.egg-info/requires.txt
+teste_geru.egg-info/top_level.txt

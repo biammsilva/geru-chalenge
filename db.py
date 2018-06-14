@@ -1,6 +1,8 @@
 from sqlalchemy import create_engine
-from sqlalchemy import Column, DateTime, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, DateTime, String
+
+engine = create_engine('sqlite:///teste-geru.db', echo=True)
 
 Base = declarative_base()
 
@@ -12,5 +14,4 @@ class Session(Base):
     session_id = Column(String)
 
 
-engine = create_engine('sqlite:///teste-geru.db', echo=True)
 Base.metadata.create_all(engine)

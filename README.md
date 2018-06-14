@@ -56,3 +56,8 @@ pserve --reload development.ini
 ```
 
 Neste caso você precisará sempre ativar a sua env para rodar a aplicação, pois nela conterá todas as dependências necessárias para sua execução. Com uma env você terá um ambiente para rodar sua aplicação sem instalar as bibliotecas de maneira solta em sua máquina. Obs: Dentro de uma env não é necessário dizer a versão do python que está sendo usada já que ela foi inicializada com uma versão base.
+
+## Running Tests
+```
+pytest tests.py
+```

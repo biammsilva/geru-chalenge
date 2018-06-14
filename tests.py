@@ -15,4 +15,4 @@ class TestCase(unittest.TestCase):
 
     def test_home(self):
         res = self.testapp.get('/', status=200)
-        self.assertIn("Web Challenge 1.0", res.body)
+        self.assertIn(b'Web Challenge 1.0', res.body)

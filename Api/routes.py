@@ -1,4 +1,4 @@
-from views import get_quotes_view, get_quote_view, home_view, get_random_quote_view
+from Api.views import get_quotes_view, get_quote_view, home_view, get_random_quote_view
 
 def make_routes(config):
     config.add_route('home', '/')
